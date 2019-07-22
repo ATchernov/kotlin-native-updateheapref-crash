@@ -1,0 +1,10 @@
+//
+//  Created by Aleksey Mikhailov on 08/11/2018.
+//  Copyright © 2018 IceRock Development. All rights reserved.
+//
+
+#include "release.xcconfig"
+#include "../Pods/Target Support Files/Pods-TestProj/Pods-TestProj.dev-release.xcconfig"
+#include "dev.xcconfig"
+
+PROVISIONING_PROFILE_SPECIFIER = $(sigh_com.test.dev_development)

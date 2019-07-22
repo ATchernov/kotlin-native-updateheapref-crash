@@ -1,0 +1,24 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+project 'TestProj',
+  'dev-release' => :release, 'prod-release' => :release,
+  'dev-debug' => :debug, 'prod-debug' => :debug
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+use_frameworks!
+platform :ios, '11.0'
+
+# workaround for https://github.com/CocoaPods/CocoaPods/issues/8073
+# нужно чтобы кеш development pods корректно инвалидировался
+install! 'cocoapods', :disable_input_output_paths => true
+
+target 'TestProj' do
+  pod 'Alamofire', '4.8.2'
+  
+  # MultiPlatformLibrary
+  # для корректной установки фреймворка нужно сначала скомпилировать котлин библиотеку
+  # ./gradlew :mpp-library:syncMultiPlatformLibraryDebugFrameworkIosX64 (в корневой директории репозитория)
+  pod 'MultiPlatformLibrary', :path => '../mpp-library'
+end

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zIh-nI-gcX">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="snE-Ct-w85">
+            <objects>
+                <navigationController id="zIh-nI-gcX" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aGe-Yj-KQZ">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5Fw-i0-42j" kind="relationship" relationship="rootViewController" id="6b5-g5-jIY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dpF-aw-Lyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5158" y="-1482"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="QsD-Pw-Tvf">
+            <objects>
+                <viewController id="5Fw-i0-42j" customClass="TestViewController" customModule="TestProj" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HXe-Dc-x58"/>
+                        <viewControllerLayoutGuide type="bottom" id="BDT-iO-9G7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HOS-zK-brT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbP-Wm-hnL">
+                                <rect key="frame" x="128" y="522" width="64" height="30"/>
+                                <state key="normal" title="Press Me"/>
+                                <connections>
+                                    <action selector="onButtonPressed" destination="5Fw-i0-42j" eventType="touchUpInside" id="SEY-cR-IoZ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hq1-dp-NOQ">
+                                <rect key="frame" x="16" y="64" width="288" height="458"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hq1-dp-NOQ" firstAttribute="leading" secondItem="HOS-zK-brT" secondAttribute="leadingMargin" id="Dga-ph-DYW"/>
+                            <constraint firstItem="UbP-Wm-hnL" firstAttribute="centerX" secondItem="HOS-zK-brT" secondAttribute="centerX" id="Gzr-OX-osJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hq1-dp-NOQ" secondAttribute="trailing" id="Mf8-46-Juy"/>
+                            <constraint firstItem="UbP-Wm-hnL" firstAttribute="top" secondItem="Hq1-dp-NOQ" secondAttribute="bottom" id="QXN-Wr-hKC"/>
+                            <constraint firstItem="Hq1-dp-NOQ" firstAttribute="top" secondItem="HXe-Dc-x58" secondAttribute="bottom" id="dvM-si-oaN"/>
+                            <constraint firstItem="BDT-iO-9G7" firstAttribute="top" secondItem="UbP-Wm-hnL" secondAttribute="bottom" constant="16" id="w2X-OP-1BE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ja0-K9-I4X"/>
+                    <connections>
+                        <outlet property="textLabel" destination="Hq1-dp-NOQ" id="Zux-Za-txb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="azu-gT-7ZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4314" y="-1482"/>
+        </scene>
+    </scenes>
+</document>

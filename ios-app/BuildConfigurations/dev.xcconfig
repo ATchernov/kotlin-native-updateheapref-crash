@@ -1,0 +1,3 @@
+PRODUCT_BUNDLE_IDENTIFIER = com.test.dev
+BUNDLE_NAME = TestProj (D)
+SERVER_ENDPOINT = https:\/\/api.github.com
