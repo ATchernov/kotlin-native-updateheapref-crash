@@ -44,8 +44,8 @@
                                     <action selector="onButtonPressed" destination="5Fw-i0-42j" eventType="touchUpInside" id="SEY-cR-IoZ"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hq1-dp-NOQ">
-                                <rect key="frame" x="16" y="64" width="288" height="458"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hq1-dp-NOQ">
+                                <rect key="frame" x="16" y="64" width="288" height="434"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -57,7 +57,7 @@
                             <constraint firstItem="Hq1-dp-NOQ" firstAttribute="leading" secondItem="HOS-zK-brT" secondAttribute="leadingMargin" id="Dga-ph-DYW"/>
                             <constraint firstItem="UbP-Wm-hnL" firstAttribute="centerX" secondItem="HOS-zK-brT" secondAttribute="centerX" id="Gzr-OX-osJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Hq1-dp-NOQ" secondAttribute="trailing" id="Mf8-46-Juy"/>
-                            <constraint firstItem="UbP-Wm-hnL" firstAttribute="top" secondItem="Hq1-dp-NOQ" secondAttribute="bottom" id="QXN-Wr-hKC"/>
+                            <constraint firstItem="UbP-Wm-hnL" firstAttribute="top" secondItem="Hq1-dp-NOQ" secondAttribute="bottom" constant="24" id="QXN-Wr-hKC"/>
                             <constraint firstItem="Hq1-dp-NOQ" firstAttribute="top" secondItem="HXe-Dc-x58" secondAttribute="bottom" id="dvM-si-oaN"/>
                             <constraint firstItem="BDT-iO-9G7" firstAttribute="top" secondItem="UbP-Wm-hnL" secondAttribute="bottom" constant="16" id="w2X-OP-1BE"/>
                         </constraints>

@@ -31,6 +31,13 @@ class TestViewController: UIViewController {
 extension TestViewController: TestViewPresenterView {
   func showMessage(string: String) {
     textLabel.text = string
+    
+    guard let presenter = self.presenter else { return }
+    for _ in 0 ... 3 {
+      DispatchQueue.main.async {
+        presenter.onButtonPressed()
+      }
+    }
   }
 }
 
@@ -67,7 +74,7 @@ class NativeCall: NSObject, NativeCallInterface {
   func testCall(callback: @escaping (String?, KotlinThrowable?) -> Void) {
     let googleApiKey = "PLACE_API_KEY_HERE"
     let random = Float.random(in: 0.0 ... 10.0)
-    let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=55.061136,82.936454&destination=55.06793021689708,\(82 + random).9437481239438&key=\(googleApiKey)")
+    let url = URL(string: "https://maps.googleapis.com/maps/api/directions/json?origin=55.061136,82.936454&destination=55.06793021689708,\(82 + random).06793021689708&key=\(googleApiKey)")
     
     Alamofire.request(url!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
       .responseData { (response) in
@@ -75,25 +82,21 @@ class NativeCall: NSObject, NativeCallInterface {
           do {
             let direction = try JSONDecoder().decode(Direction.self, from: data)
             
-            DispatchQueue.main.async {
-              callback(String(describing: direction), nil)
-            }
+            print("parsing done \(direction)")
+            
+            callback(String(describing: direction), nil)
           } catch let error as NSError {
-            DispatchQueue.main.async {
-              callback(nil, KotlinThrowable(message: error.localizedDescription))
-            }
-          }
-        } else if let error = response.error {
-          DispatchQueue.main.async {
+            print("parsing failed \(error)")
             callback(nil, KotlinThrowable(message: error.localizedDescription))
           }
+        } else if let error = response.error {
+          print("error \(error)")
+          callback(nil, KotlinThrowable(message: error.localizedDescription))
         } else {
-          DispatchQueue.main.async {
-            callback(nil, KotlinThrowable(message: "unknown result at \(response)"))
-          }
+          print("unknown result")
+          callback(nil, KotlinThrowable(message: "unknown result at \(response)"))
         }
     }
-
   }
 }
 
