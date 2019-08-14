@@ -9,8 +9,10 @@ class ClosureLeakIssueKotlinModel(
     fun getItems(): List<AbstractItem>{
         return (1..10).map { "Item #$it" }.map{ item ->
                 itemsFactory.createDataItem(item) {
-                    //MAYBE: closure holds link to eventDispatcher
-                    eventsDispatcher.dispatchEvent { itemTapped(item) } }
+                    eventsDispatcher.dispatchEvent {
+                        //MAYBE: 'this' is captured
+                        itemTapped(item)
+                    } }
         }
     }
 
