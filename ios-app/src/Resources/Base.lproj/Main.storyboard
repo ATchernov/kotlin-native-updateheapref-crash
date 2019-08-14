@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="5Fw-i0-42j" kind="relationship" relationship="rootViewController" id="6b5-g5-jIY"/>
+                        <segue destination="bqA-Bx-8H8" kind="relationship" relationship="rootViewController" id="IAL-Fd-E36"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpF-aw-Lyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Hq1-dp-NOQ">
-                                <rect key="frame" x="16" y="64" width="288" height="434"/>
+                                <rect key="frame" x="16" y="20" width="288" height="478"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -69,7 +69,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azu-gT-7ZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4314" y="-1482"/>
+            <point key="canvasLocation" x="-3489" y="-1482"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Oh2-ec-c9F">
+            <objects>
+                <viewController id="bqA-Bx-8H8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gql-WT-Cr9"/>
+                        <viewControllerLayoutGuide type="bottom" id="hla-R0-VhZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BeZ-Ka-FEQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CrR-oH-hRl">
+                                <rect key="frame" x="137" y="269" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="J4O-iD-Xr0" kind="show" id="Udn-dT-pad"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CrR-oH-hRl" firstAttribute="centerY" secondItem="BeZ-Ka-FEQ" secondAttribute="centerY" id="WJx-gD-sql"/>
+                            <constraint firstItem="CrR-oH-hRl" firstAttribute="centerX" secondItem="BeZ-Ka-FEQ" secondAttribute="centerX" id="x85-Db-nsO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8zu-hq-2Df"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kGK-L3-ADU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4316" y="-761"/>
+        </scene>
+        <!--Closure Leak Issue View Controller-->
+        <scene sceneID="FL5-qp-X2O">
+            <objects>
+                <viewController id="J4O-iD-Xr0" customClass="ClosureLeakIssueViewController" customModule="TestProj" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yAR-Nw-TAg"/>
+                        <viewControllerLayoutGuide type="bottom" id="TvY-eo-lcM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hGT-WR-kER">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uIf-yk-MkW">
+                                <rect key="frame" x="16" y="64" width="288" height="504"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="uIf-yk-MkW" secondAttribute="trailing" id="0cz-wo-8Of"/>
+                            <constraint firstItem="uIf-yk-MkW" firstAttribute="top" secondItem="yAR-Nw-TAg" secondAttribute="bottom" id="KHO-bd-WX7"/>
+                            <constraint firstItem="TvY-eo-lcM" firstAttribute="top" secondItem="uIf-yk-MkW" secondAttribute="bottom" id="Tvx-gf-caA"/>
+                            <constraint firstItem="uIf-yk-MkW" firstAttribute="leading" secondItem="hGT-WR-kER" secondAttribute="leadingMargin" id="wHs-Oh-rLJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="uIf-yk-MkW" id="ZHs-v0-N6k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dy0-0I-Pd2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3474" y="-762"/>
         </scene>
     </scenes>
 </document>

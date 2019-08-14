@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E8A03CF230418340041C511 /* ClosureLeakIssueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A03CE230418340041C511 /* ClosureLeakIssueController.swift */; };
+		0E8A03D2230430740041C511 /* ClosureLeakIssueNativeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A03D1230430740041C511 /* ClosureLeakIssueNativeTest.swift */; };
 		2B70A10DE02726CA8E6981EB /* Pods_TestProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D683A7C91DCD56058C7435 /* Pods_TestProj.framework */; };
 		45964D3D2282A40F00C16658 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45964D3C2282A40F00C16658 /* Environment.swift */; };
 		45D74FCC22BFDDFD00CAB0C8 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D74FCB22BFDDFD00CAB0C8 /* TestViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E8A03CE230418340041C511 /* ClosureLeakIssueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureLeakIssueController.swift; sourceTree = "<group>"; };
+		0E8A03D1230430740041C511 /* ClosureLeakIssueNativeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureLeakIssueNativeTest.swift; sourceTree = "<group>"; };
 		287627FF1F319065007FA12B /* TestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45964D362282A1FD00C16658 /* mpp-library */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mpp-library"; path = "../mpp-library"; sourceTree = "<group>"; };
 		45964D382282A22A00C16658 /* prod.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = prod.xcconfig; sourceTree = "<group>"; };
@@ -68,6 +72,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		0E8A03D023041C780041C511 /* ClosureLeakIssue */ = {
+			isa = PBXGroup;
+			children = (
+				0E8A03CE230418340041C511 /* ClosureLeakIssueController.swift */,
+				0E8A03D1230430740041C511 /* ClosureLeakIssueNativeTest.swift */,
+			);
+			path = ClosureLeakIssue;
+			sourceTree = "<group>";
+		};
 		287627F61F319065007FA12B = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +106,7 @@
 		45F47910219463C7003D25FA /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0E8A03D023041C780041C511 /* ClosureLeakIssue */,
 				45964D3C2282A40F00C16658 /* Environment.swift */,
 				45F47911219463C7003D25FA /* Resources */,
 				45F4791A219463C7003D25FA /* Assets.xcassets */,
@@ -148,7 +162,6 @@
 				287627FB1F319065007FA12B /* Sources */,
 				287627FC1F319065007FA12B /* Frameworks */,
 				287627FD1F319065007FA12B /* Resources */,
-				287628151F319DEA007FA12B /* Deploy Fabric dSYMs */,
 				02B727FAA6B9D00725C179CA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -225,20 +238,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestProj/Pods-TestProj-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		287628151F319DEA007FA12B /* Deploy Fabric dSYMs */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Deploy Fabric dSYMs";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [[ \"${CONFIGURATION}\" == *\"release\"* ]]; then\n\"${PODS_ROOT}/Fabric/run\" ${FABRIC_API_KEY} ${FABRIC_BUILD_SECRET}\nfi\n";
-		};
 		DDE4C06D580BF457BEDF8D0A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8A03CF230418340041C511 /* ClosureLeakIssueController.swift in Sources */,
+				0E8A03D2230430740041C511 /* ClosureLeakIssueNativeTest.swift in Sources */,
 				45964D3D2282A40F00C16658 /* Environment.swift in Sources */,
 				45D74FCC22BFDDFD00CAB0C8 /* TestViewController.swift in Sources */,
 				45F47922219463C7003D25FA /* AppDelegate.swift in Sources */,
@@ -330,7 +331,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RF9T8S9829;
 				INFOPLIST_FILE = src/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				VALID_ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 			};
@@ -345,7 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RF9T8S9829;
 				INFOPLIST_FILE = src/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				VALID_ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 			};
@@ -368,7 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RF9T8S9829;
 				INFOPLIST_FILE = src/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				VALID_ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 			};
@@ -391,7 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RF9T8S9829;
 				INFOPLIST_FILE = src/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				VALID_ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 			};
