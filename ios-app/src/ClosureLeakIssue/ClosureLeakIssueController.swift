@@ -18,17 +18,22 @@ class ClosureLeakIssueViewController: UIViewController, ClosureLeakIssueKotlinMo
   
   private var model: AnyObject!
   
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    stackView.subviews.forEach({ $0.removeFromSuperview() })
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     //Swift
 //      let testModel = ClosureLeakIssueSwiftModel(
 //      withDispatcher: NativeDispatcher(withListener: self),
 //      andFactory: ItemsFactory())
-    
+//
     //MPP
-    let testModel = ClosureLeakIssueKotlinModel(eventsDispatcher: EventsDispatcher(mListener: self),
+    let testModel = ClosureLeakIssueKotlinModel(eventsDispatcher: NativeDispatcher(withListener: self),
                                         itemsFactory: ItemsFactory())
-    //get elements
+
     testModel.getItems().compactMap({ $0 as? MyTestItem }).map({ item in
       let label = TappableLabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
       label.text = item.title

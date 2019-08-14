@@ -30,7 +30,7 @@ class ClosureLeakIssueSwiftModel: NSObject {
   }
 }
 
-class NativeDispatcher<T> where T: AnyObject {
+class NativeDispatcher<T>: EventsDispatcher where T: AnyObject {
   private weak var listener: T?
   init(withListener: T) {
     self.listener = withListener
@@ -38,6 +38,12 @@ class NativeDispatcher<T> where T: AnyObject {
   func dispatchEvent(_ event: (T) -> Void) {
     if let nListener = listener {
       event(nListener)
+    }
+  }
+  
+  func dispatchEvent(block: @escaping (Any) -> Void) {
+    if let nListener = listener {
+      block(nListener)
     }
   }
 }
