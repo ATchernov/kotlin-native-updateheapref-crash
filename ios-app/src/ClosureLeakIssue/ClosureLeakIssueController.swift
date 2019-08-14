@@ -9,7 +9,7 @@
 import UIKit
 import MultiPlatformLibrary
 
-class ClosureLeakIssueViewController: UIViewController, ClosureLeakIssueTestClosureInterface {
+class ClosureLeakIssueViewController: UIViewController, ClosureLeakIssueKotlinModelClosureInterface {
   @IBOutlet private weak var stackView: UIStackView!
   
   func itemTapped(title: String) {
@@ -20,14 +20,14 @@ class ClosureLeakIssueViewController: UIViewController, ClosureLeakIssueTestClos
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    //MPP
-      let testModel = ClosureLeakIssueNativeTest(
-      withDispatcher: NativeDispatcher(withListener: self),
-      andFactory: ItemsFactory())
-    
     //Swift
-//    let testModel = ClosureLeakIssueTest(eventsDispatcher: EventsDispatcher(mListener: self),
-//                                        itemsFactory: ItemsFactory())
+//      let testModel = ClosureLeakIssueSwiftModel(
+//      withDispatcher: NativeDispatcher(withListener: self),
+//      andFactory: ItemsFactory())
+    
+    //MPP
+    let testModel = ClosureLeakIssueKotlinModel(eventsDispatcher: EventsDispatcher(mListener: self),
+                                        itemsFactory: ItemsFactory())
     //get elements
     testModel.getItems().compactMap({ $0 as? MyTestItem }).map({ item in
       let label = TappableLabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
@@ -45,6 +45,7 @@ class ClosureLeakIssueViewController: UIViewController, ClosureLeakIssueTestClos
   }
   
   deinit {
+    //Works with swift when navigation back
     print("ClosureLeakIssueViewController - deinit")
   }
 }
@@ -67,7 +68,7 @@ class TappableLabel: UILabel {
   }
 }
 
-class ItemsFactory: ClosureLeakIssueTestItemsFactory {
+class ItemsFactory: ClosureLeakIssueKotlinModelItemsFactory {
   func createDataItem(title: String, onTap: @escaping () -> Void) -> AbstractItem {
     return MyTestItem(withTitle: title, andTap: onTap)
   }

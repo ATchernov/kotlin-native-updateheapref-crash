@@ -2,7 +2,7 @@ package com.icerockdev.library
 
 class AbstractItem {}
 
-class ClosureLeakIssueTest(
+class ClosureLeakIssueKotlinModel(
     private val eventsDispatcher: EventsDispatcher<ClosureInterface>,
     private val itemsFactory: ItemsFactory) {
 

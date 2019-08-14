@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E8A03CF230418340041C511 /* ClosureLeakIssueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A03CE230418340041C511 /* ClosureLeakIssueController.swift */; };
-		0E8A03D2230430740041C511 /* ClosureLeakIssueNativeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A03D1230430740041C511 /* ClosureLeakIssueNativeTest.swift */; };
+		0E8A03D2230430740041C511 /* ClosureLeakIssueSwiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8A03D1230430740041C511 /* ClosureLeakIssueSwiftModel.swift */; };
 		2B70A10DE02726CA8E6981EB /* Pods_TestProj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D683A7C91DCD56058C7435 /* Pods_TestProj.framework */; };
 		45964D3D2282A40F00C16658 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45964D3C2282A40F00C16658 /* Environment.swift */; };
 		45D74FCC22BFDDFD00CAB0C8 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D74FCB22BFDDFD00CAB0C8 /* TestViewController.swift */; };
@@ -21,7 +21,7 @@
 
 /* Begin PBXFileReference section */
 		0E8A03CE230418340041C511 /* ClosureLeakIssueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureLeakIssueController.swift; sourceTree = "<group>"; };
-		0E8A03D1230430740041C511 /* ClosureLeakIssueNativeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureLeakIssueNativeTest.swift; sourceTree = "<group>"; };
+		0E8A03D1230430740041C511 /* ClosureLeakIssueSwiftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureLeakIssueSwiftModel.swift; sourceTree = "<group>"; };
 		287627FF1F319065007FA12B /* TestProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45964D362282A1FD00C16658 /* mpp-library */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "mpp-library"; path = "../mpp-library"; sourceTree = "<group>"; };
 		45964D382282A22A00C16658 /* prod.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = prod.xcconfig; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				0E8A03CE230418340041C511 /* ClosureLeakIssueController.swift */,
-				0E8A03D1230430740041C511 /* ClosureLeakIssueNativeTest.swift */,
+				0E8A03D1230430740041C511 /* ClosureLeakIssueSwiftModel.swift */,
 			);
 			path = ClosureLeakIssue;
 			sourceTree = "<group>";
@@ -268,7 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E8A03CF230418340041C511 /* ClosureLeakIssueController.swift in Sources */,
-				0E8A03D2230430740041C511 /* ClosureLeakIssueNativeTest.swift in Sources */,
+				0E8A03D2230430740041C511 /* ClosureLeakIssueSwiftModel.swift in Sources */,
 				45964D3D2282A40F00C16658 /* Environment.swift in Sources */,
 				45D74FCC22BFDDFD00CAB0C8 /* TestViewController.swift in Sources */,
 				45F47922219463C7003D25FA /* AppDelegate.swift in Sources */,

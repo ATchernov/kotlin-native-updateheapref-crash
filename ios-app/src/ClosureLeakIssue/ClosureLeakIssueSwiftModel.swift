@@ -10,20 +10,20 @@ import Foundation
 import MultiPlatformLibrary
 
 //Like in MPP
-class ClosureLeakIssueNativeTest: NSObject {
-  private let dispatcher: NativeDispatcher<ClosureLeakIssueTestClosureInterface>
-  private let itemsFactory: ClosureLeakIssueTestItemsFactory
+class ClosureLeakIssueSwiftModel: NSObject {
+  private let dispatcher: NativeDispatcher<ClosureLeakIssueKotlinModelClosureInterface>
+  private let itemsFactory: ClosureLeakIssueKotlinModelItemsFactory
   
-  init(withDispatcher dispatcher: NativeDispatcher<ClosureLeakIssueTestClosureInterface>,
-       andFactory factory: ClosureLeakIssueTestItemsFactory) {
+  init(withDispatcher dispatcher: NativeDispatcher<ClosureLeakIssueKotlinModelClosureInterface>,
+       andFactory factory: ClosureLeakIssueKotlinModelItemsFactory) {
     self.dispatcher = dispatcher
     self.itemsFactory = factory
   }
   
   func getItems() -> [AbstractItem] {
-    return (1...10).map({ "Item #\($0)" }).map({ [weak self] item in
+    return (1...10).map({ "Item #\($0)" }).map({ item in
       itemsFactory.createDataItem(title: item, onTap: {
-        self?.dispatcher.dispatchEvent({ $0.itemTapped(title: item) })
+        self.dispatcher.dispatchEvent({ $0.itemTapped(title: item) })
       }
     )
     })
